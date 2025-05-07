@@ -1,6 +1,13 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-primary: oklch(35.1% 0.09 264.5);
+  --color-secondary: oklch(47.2% 0.07 264.5);
+  --color-background: oklch(90.3% 0.02 264.5);
+  --color-primary-dark: oklch(96.0% 0.0 0);
+  --color-secondary-dark: oklch(88.5% 0.03 240.0);
+  --color-background-dark: oklch(11.5% 0.03 240.0);
 }

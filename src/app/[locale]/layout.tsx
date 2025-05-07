@@ -4,7 +4,10 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from '@mui/material/styles';
 import { TRPCReactProvider } from "@/trpc/react";
-import theme from '../theme';
+import theme from '../../theme';
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
  
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -18,15 +21,25 @@ const geist = Geist({
 });
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  params,
+}: Readonly<{ children: React.ReactNode,   params: Promise<{locale: string}>; }>) {
+    // Ensure that the incoming `locale` is valid
+    const {locale} = await params;
+    if (!hasLocale(routing.locales, locale)) {
+      notFound();
+    }
   return (
-    <html lang="en" className={`${geist.variable}`}>
+    <html lang={locale} className={`${geist.variable}`}>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <TRPCReactProvider>{children}</TRPCReactProvider>
+            <TRPCReactProvider>
+              <NextIntlClientProvider>
+                {children}
+              </NextIntlClientProvider>
+            </TRPCReactProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
