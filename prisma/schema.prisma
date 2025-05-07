@@ -1,0 +1,98 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // atau "mysql" sesuai DB yang digunakan
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String           @id @default(uuid())
+  image           String?
+  username        String?
+  passeord        String?          // Typo pada nama field "passeord"
+  role            String?
+  created_at      DateTime?
+  updated_at      DateTime?
+  posts           Post[]
+  cv_files        CVFile[]
+  musics          Music[]
+  spotifyHistory  SpotifyHistory[]
+  appActivities   AppActivity[]
+}
+
+model Post {
+  id            String     @id @default(uuid())
+  type_post     Int?
+  title         String?
+  excerpt       String?
+  slug          String?
+  image         String?
+  body          String?    /// Content of the post
+  link_preview  String?
+  link_github   String?
+  status        String?
+  created_at    DateTime?
+  updated_at    DateTime?
+  deleted_at    DateTime?
+  user_id       String
+  user          User       @relation(fields: [user_id], references: [id])
+  comments      Comment[]
+}
+
+model CVFile {
+  id         String   @id @default(uuid())
+  file_path  String?
+  user_id    String?
+  user       User?    @relation(fields: [user_id], references: [id])
+  created_at DateTime?
+}
+
+model Music {
+  id         String   @id @default(uuid())
+  title      String?
+  album      String?
+  artist     String?
+  user_id    String?
+  user       User?    @relation(fields: [user_id], references: [id])
+  created_at DateTime?
+}
+
+model Comment {
+  id         String    @id @default(uuid())
+  name       String?
+  email      String?
+  body       String?
+  post_id    String?
+  post       Post?     @relation(fields: [post_id], references: [id])
+  comment_id String?
+  parent     Comment?  @relation("CommentToParent", fields: [comment_id], references: [id])
+  replies    Comment[] @relation("CommentToParent")
+  created_at DateTime?
+}
+
+model SpotifyHistory {
+  id              String   @id @default(uuid())
+  user_id         String
+  user            User     @relation(fields: [user_id], references: [id])
+  track_id        String   @unique
+  track_name      String?
+  artist_name     String?
+  album_name      String?
+  album_image_url String?
+  played_at       DateTime
+  duration_ms     Int?
+  preview_url     String?
+}
+
+model AppActivity {
+  id           String   @id @default(uuid())
+  user_id      String
+  user         User     @relation(fields: [user_id], references: [id])
+  app_name     String?
+  process_name String?
+  window_title String?
+  started_at   DateTime?
+  ended_at     DateTime?
+}
