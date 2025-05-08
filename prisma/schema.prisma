@@ -33,6 +33,7 @@ model Post {
   link_preview  String?
   link_github   String?
   status        String?
+  stack         Json?
   created_at    DateTime?
   updated_at    DateTime?
   deleted_at    DateTime?

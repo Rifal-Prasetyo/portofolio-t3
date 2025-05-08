@@ -11,3 +11,6 @@
   --color-secondary-dark: oklch(88.5% 0.03 240.0);
   --color-background-dark: oklch(11.5% 0.03 240.0);
 }
+html {
+  scroll-behavior: smooth;
+}

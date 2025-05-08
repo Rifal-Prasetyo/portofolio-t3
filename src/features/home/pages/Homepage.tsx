@@ -1,12 +1,11 @@
 'use client'
-import type { Metadata } from "next";
-import {AddressBook, Article, CalendarDots, DownloadSimple, HouseLine, Info, MapPin, Package} from '@phosphor-icons/react/dist/ssr';
+import {AddressBook, Article, CalendarDots, DownloadSimple, HouseLine, Info, MapPin, Package, PlayPause, SkipBack, SkipForward} from '@phosphor-icons/react/dist/ssr';
 import ThemeSelector from '@/components/ui/ThemeSelector';
 import clsx from 'clsx';
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { Tooltip } from "@mui/material";
 
 
@@ -14,27 +13,27 @@ const navigationButton = [
     {
         icon: HouseLine,
         key: "home",
-        href: "/#home",
+        href: "#home",
     },
     {
         icon: Info,
         key: 'about',
-        href: "/#about",
+        href: "#about",
     },
     {
         icon: Package,
         key: 'project',
-        href: "/#projects",
+        href: "#projects",
     },
     {
         icon: Article,
         key: 'article',
-        href: '/#articles',
+        href: '#articles',
     },
     {
         icon: AddressBook,
         key: 'contact',
-        href: '/#contact',
+        href: '#contact',
     }
 ];
 
@@ -45,7 +44,7 @@ const progammingLangLogos = [
     },
     {
         name: 'PHP',
-        icon: '/assets/logos/php.svg'
+        icon: '/assets/logos/php-light.svg'
     },
     {
         name: 'React JS', 
@@ -57,7 +56,7 @@ const progammingLangLogos = [
     },
     {
         name: 'Next JS',
-        icon: '/assets/logos/nextjs.svg'
+        icon: '/assets/logos/nextjs-light.svg'
     },
     {
         name: 'Tailwind CSS',
@@ -65,7 +64,7 @@ const progammingLangLogos = [
     },
     {
         name: 'MySQL',
-        icon: '/assets/logos/mysql.svg'
+        icon: '/assets/logos/mysql-light.svg'
     },
     {
         name: 'PostgreSQL',
@@ -73,14 +72,17 @@ const progammingLangLogos = [
     },
     {
         name: 'Github',
-        icon: '/assets/logos/github.svg'
+        icon: '/assets/logos/github-light.svg',
     }
 ];
-const sections = navigationButton.map((item) => item.href.replace('/', ''));
+const sections = navigationButton.map((item) => item.key);
 
 const Home = () => {
     const [activeSection, setActiveSection] = useState('home');
-    const pathName = usePathname();
+    // useEffect(() => {
+
+    //     console.log(activeSection);
+    // }, [activeSection]);
     useEffect(() => {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -120,9 +122,9 @@ const Home = () => {
                         <ul>
                             {
                                 navigationButton.map((item, index) => (
-                                    <li key={index} className={clsx("flex gap-2 items-center w-full mb-2  hover:bg-gray-200 dark:hover:bg-primary-dark  rounded-md p-2 transition-all duration-500 ease-in-out cursor-pointer ", activeSection === item.href.replace('/', '') && "bg-gray-200 dark:bg-primary-dark dark:text-primary")}>
+                                    <li key={index} className={clsx("flex gap-2 items-center w-full mb-2  hover:bg-gray-200 dark:hover:bg-primary-dark  rounded-md p-2 transition-all duration-500 ease-in-out cursor-pointer ", activeSection === item.key && "bg-gray-200 dark:bg-primary-dark dark:text-primary")}>
                                         <item.icon size={20}  />
-                                        <Link href={pathName + item.href} className="text-sm md:text-lg">{t(`Sidebar.navbar.${item.key}`)}</Link>
+                                        <Link href={item.href} className="text-sm md:text-lg">{t(`Sidebar.navbar.${item.key}`)}</Link>
                                     </li>
                                 ))
                             }
@@ -186,9 +188,83 @@ const Home = () => {
                                         ))
                                     }
                                 </ul>
+                                <h3 className="font-bold text-sm mt-2">{t('About.medsos.title')}</h3>
+                                <ul className="w-full flex flex-wrap gap-2">
+                                    {
+                                        [
+                                            {
+                                                name: 'LinkedIn',
+                                                icon: '/assets/logos/linkedin.svg',
+                                                href: 'https://www.linkedin.com/in/muhammad-rifal-prasetyo-0b1a1b1a3/',
+                                                alias: 'Muhammad Rifal Prasetyo',
+                                            },
+                                            {
+                                                name: 'Instagram',
+                                                icon: '/assets/logos/instagram.svg',
+                                                href: 'https://instagram.com',
+                                                alias: '@Rifal_prasetyo76',
+                                            },
+                                            {
+                                                name: 'Github',
+                                                icon: '/assets/logos/github.svg',
+                                                href: 'https://github.com',
+                                                alias: 'Rifal-Prasetyo'
+                                            }
+                                        ].map((item, index) => (
+                                            <li key={index}>
+                                                <Link target="_blank" href={item.href} className="px-4 py-2 flex text-xs items-center gap-2 rounded-md bg-primary dark:bg-primary-dark text-primary-dark dark:text-primary hover:opacity-80 ">
+                                                    <Image src={item.icon} width={20} height={20} alt={item.name}  />
+                                                    {item.alias}
+                                                </Link>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
                                 <h3 className="font-bold text-sm mt-2">{t('About.spotify.title')}</h3>
-                                <div className="w-full flex justify-center items-center mt-2">
+                                <div className="w-full flex flex-col justify-center items-center mt-2">
                                     <iframe className=" rounded-xl" src="https://open.spotify.com/embed/track/0F6nGXMCUbtk8FiXvKi6HK?utm_source=generator" width="100%" height="152"  allowFullScreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                                    <div className="w-full flex flex-col items-center mt-4">
+                                        <div className="w-full bg-primary dark:bg-primary-dark rounded-lg p-4 flex flex-col items-center shadow-md">
+                                            <div className="w-12 h-12 rounded-md overflow-hidden mb-4">
+                                                <Image
+                                                    src="/assets/dummy/album-cover.png"
+                                                    alt="Album Cover"
+                                                    width={96}
+                                                    height={96}
+                                                    className="object-cover"
+                                                />
+                                            </div>
+                                            <h4 className="text-lg font-bold dark:text-primary text-primary-dark">
+                                                Dummy Song Title
+                                            </h4>
+                                            <p className="text-sm dark:text-secondary text-secondary-dark">
+                                                Dummy Artist Name
+                                            </p>
+                                            <div className="w-full flex items-center mt-4">
+                                                <span className="text-xs darktext-secondary text-secondary-dark">0:00</span>
+                                                <input
+                                                    type="range"
+                                                    className="mx-2 w-full accent-secondary dark:accent-secondary-dark"
+                                                    min="0"
+                                                    max="100"
+                                                    value="50"
+                                                    readOnly
+                                                />
+                                                <span className="text-xs dark:text-secondary text-secondary-dark">3:45</span>
+                                            </div>
+                                            <div className="w-full flex justify-center items-center mt-4 gap-4">
+                                                <button className="p-2 rounded-full dark:bg-secondary bg-secondary-dark dark:text-primary-dark text-primary hover:opacity-80">
+                                                    <SkipBack size={20}/> 
+                                                </button>
+                                                <button className="p-3 rounded-full dark:bg-secondary bg-secondary-dark dark:text-primary-dark text-primary hover:opacity-80">
+                                                    <PlayPause size={20} />
+                                                </button>
+                                                <button className="p-2 rounded-full dark:bg-secondary bg-secondary-dark dark:text-primary-dark text-primary hover:opacity-80">
+                                                    <SkipForward size={20} />
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="w-full md:w-1/2">
@@ -236,6 +312,30 @@ const Home = () => {
                                             ))
                                         }
                                 </ul>
+                                <h3 className="font-bold text-sm mt-2">{t('About.education.title')}</h3>
+                                <ul className='w-full'>
+                                    {
+                                        [
+                                            {
+                                                image: '/assets/img/educations/eskasaba.png',
+                                                name: 'SMK Negeri 1 Bangsri',
+                                                learn_date: '2022 - 2025',
+                                            }
+                                        ].map((item, index) => (
+                                            <li key={index}>
+                                                <div className='px-2 py-2 border-2 border-secondary dark:border-secondary-dark rounded-md flex gap-4 items-center'>
+                                                    <div className='flex items-center justify-center border-r-2 pr-1 border-secondary dark:border-secondary-dark'>
+                                                        <Image src={item.image} alt={item.name} width={60} height={60}  />
+                                                    </div>
+                                                    <div className='flex flex-col'>
+                                                        <p className='font-bold text-sm md:text-lg'>{item.name}</p>
+                                                        <p className='font-light text-xs md:text-sm'>{item.learn_date}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
                             </div>
                     </div>
                 </div>
@@ -246,8 +346,3 @@ const Home = () => {
   );
 }
 export default Home;
-export const metadata: Metadata = {
-    title: "Portofolio Muhammad Rifal Prasetyo",
-    description: "Portofolio",
-    icons: [{ rel: "icon", url: "/favicon.ico" }],
-};

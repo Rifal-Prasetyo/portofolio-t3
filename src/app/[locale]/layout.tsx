@@ -31,7 +31,7 @@ export default async function RootLayout({
       notFound();
     }
   return (
-    <html lang={locale} className={`${geist.variable}`}>
+    <html lang={locale} className={`${geist.variable} scroll-smooth`}>
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
