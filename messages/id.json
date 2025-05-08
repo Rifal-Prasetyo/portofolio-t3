@@ -55,5 +55,14 @@
         "subtitle": "Berikut proyek-proyek karya saya",
         "link_preview": "Kunjungi",
         "link_github": "Github"
+    },
+    "Article": {
+        "title": "Artikel",
+        "subtitle": "Kadang saya suka menulis, saya biasanya menorehkannya disini",
+        "link": "Baca Detail"
+    },
+    "Contact": {
+        "title": "Kontak",
+        "subtitle": "Hubungi saya segera, mari kenalan lebih dekat"
     }
 }
