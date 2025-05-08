@@ -45,6 +45,15 @@
         },
         "spotify": {
             "title": "Lagu yang saya dengarkan"
+        },
+        "education": {
+            "title": "Riwayat Pendidikan"
         }
+    },
+    "Project": {
+        "title": "Proyek",
+        "subtitle": "Berikut proyek-proyek karya saya",
+        "link_preview": "Kunjungi",
+        "link_github": "Github"
     }
 }
