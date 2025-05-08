@@ -1,3 +1,47 @@
 {
-    "gretting": "Selamat datang di aplikasi kami!"
+    "gretting": "Selamat datang di aplikasi kami!",
+    "Sidebar": {
+        "name": "Muhammad Rifal Prasetyo",
+        "hire_me": "Hire Me",
+        "navbar": {
+            "home": "Beranda",
+            "about": "Tentang",
+            "project": "Proyek",
+            "article": "Artikel",
+            "contact": "Kontak"
+        }
+    },
+    "Home": {
+        "name":"Halo, Saya {name}",
+        "job": {
+            "fullstack": "Fullstack Developer"
+        },
+        "description": "Saya adalah seorang pengembang perangkat lunak yang berpengalaman dalam mengembangkan aplikasi web dan seluler. Saya memiliki keterampilan dalam berbagai bahasa pemrograman dan teknologi, termasuk JavaScript, React, Node.js, dan banyak lagi. Saya selalu berusaha untuk belajar dan berkembang dalam bidang ini.",
+        "download_cv": "Unduh CV"
+    },
+    "About" : {
+        "title": "Tentang Saya",
+        "subtitle": "Mau kenal saya lebih jauh?",
+        "skills": {
+            "title": "Keahlian"
+        },
+        "experience": {
+            "title": "Pengalaman Kerja",
+            "job1": {
+                "title": "Backend Developer",
+                "description": "Menjadi pengembang backend di perusahaan TEFA STUDIO, saya bertanggung jawab untuk mengembangkan dan memelihara aplikasi backend menggunakan Node.js dan Express. Saya juga terlibat dalam pengembangan API dan integrasi dengan database PostgreSQL.",
+                "location": "TEFA STUDIO",
+                "target_date": "Juli 2024 - Desember 2024"
+            },
+            "job2": {
+                "title": "FullStack Developer",
+                "description": "Menjadi pengembang fullstack di perusahaan TEFA STUDIO, menjadi pengembang website SMKN 1 Bangsri.",
+                "location": "TEFA STUDIO",
+                "target_date": "November 2024 - Desember 2024"
+            }
+        },
+        "spotify": {
+            "title": "Lagu yang saya dengarkan"
+        }
+    }
 }
