@@ -63,6 +63,7 @@
     },
     "Contact": {
         "title": "Kontak",
-        "subtitle": "Hubungi saya segera, mari kenalan lebih dekat"
+        "subtitle": "Hubungi saya segera, mari kenalan lebih dekat",
+        "contact_mail": "Hubungi via Email"
     }
 }
