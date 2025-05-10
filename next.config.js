@@ -13,7 +13,8 @@ const config = {
         ]
     },
     allowedDevOrigins: [
-        '192.168.1.155'
+        '192.168.1.155',
+        'rifalkom.my.id'
     ]
 };
 
