@@ -6,7 +6,16 @@ import "./src/env.js";
 import createNextIntlPlugin from 'next-intl/plugin';
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+    images: {
+        remotePatterns: [
+            new URL('https://i.scdn.co/image/*')
+        ]
+    },
+    allowedDevOrigins: [
+        '192.168.1.155'
+    ]
+};
 
 const withNextIntl = createNextIntlPlugin();
 export default withNextIntl(config);
