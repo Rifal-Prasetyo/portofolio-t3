@@ -1,3 +1,75 @@
 {
-    "gretting": "Welcome to the application!"
+  "greeting": "Hey there! Welcome to our awesome app!",
+  "Lang": {
+        "title": "Languages",
+        "indonesia": "Bahasa Indonesia",
+        "english": "English",
+        "japan": "日本語"
+    },
+  "Sidebar": {
+    "name": "Muhammad Rifal Prasetyo",
+    "hire_me": "Hire Me!",
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "project": "Projects",
+      "article": "Articles",
+      "contact": "Contact"
+    }
+  },
+  "Home": {
+    "name": "Hi, I'm {name}!",
+    "job": {
+      "fullstack": "Fullstack Developer"
+    },
+    "description": "I'm a software development whiz with experience building cool web and mobile apps. I've got skills in a bunch of programming languages and tech, including JavaScript, React, Node.js, and more! I'm always excited to learn and grow in this field.",
+    "download_cv": "Download CV"
+  },
+  "About": {
+    "title": "About Me",
+    "subtitle": "Wanna know me better? Awesome!",
+    "skills": {
+      "title": "Skills"
+    },
+    "experience": {
+      "title": "Work Experience",
+      "job1": {
+        "title": "Backend Developer",
+        "description": "As a backend developer at TEFA STUDIO, I was in charge of developing and keeping the backend applications running smoothly using Node.js and Express. I also helped build APIs and connect them with the PostgreSQL database.",
+        "location": "TEFA STUDIO",
+        "target_date": "July 2024 - December 2024"
+      },
+      "job2": {
+        "title": "FullStack Developer",
+        "description": "Being a fullstack developer at TEFA STUDIO, I got to build the website for SMKN 1 Bangsri. So cool!",
+        "location": "TEFA STUDIO",
+        "target_date": "November 2024 - December 2024"
+      }
+    },
+    "medsos": {
+      "title": "Social Media Accounts"
+    },
+    "spotify": {
+      "title": "Tunes I'm Listening To"
+    },
+    "education": {
+      "title": "Education History"
+    }
+  },
+  "Project": {
+    "title": "Projects",
+    "subtitle": "Check out some of the awesome projects I've worked on!",
+    "link_preview": "Visit",
+    "link_github": "Github"
+  },
+  "Article": {
+    "title": "Articles",
+    "subtitle": "Sometimes I love to write stuff down, and this is where I usually put it!",
+    "link": "Read More"
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "Reach out anytime! Let's connect!",
+    "contact_mail": "Contact via Email"
+  }
 }

@@ -8,17 +8,21 @@ import ArticleSectionRev from '../components/ArticleSectionRev';
 
 const Home = () => {
   return (
-    <>
-        <NavigationBarHome />
-        <div  className="h-auto pt-[7rem] md:w-full container transition-all duration-500 ease-in-out pb-8 overflow-auto px-4 md:px-0">
+    <div className="w-full h-screen dark:bg-background-dark  border-black transition-all duration-500 ease-in-out lg:flex lg:justify-center">
+      <div className="flex w-full  md:justify-center transition-all duration-500 ease-in-out lg:w-[70rem] lg:transition-all lg:duration-500 lg:ease-in-out">
+        <div className="flex w-full text-primary dark:text-primary-dark  md:justify-center transition-all duration-500 ease-in-out lg:w-[70rem] lg:transition-all lg:duration-500 lg:ease-in-out">
+          <NavigationBarHome />
+          <div className="h-auto pt-[7rem] md:w-full container transition-all duration-500 ease-in-out pb-8 overflow-auto px-4 md:px-0">
             <HomeSection />
-            <AboutSection/>
-            <ProjectSection/>
+            <AboutSection />
+            <ProjectSection />
             <ArticleSectionRev />
             <ContactSection />
-            <MotivationSection/>
-        </div>    
-    </>
+            <MotivationSection />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 export default Home;

@@ -1,5 +1,11 @@
 {
     "gretting": "Selamat datang di aplikasi kami!",
+    "Lang": {
+        "title": "Bahasa",
+        "indonesia": "Bahasa Indonesia",
+        "english": "English",
+        "japan": "日本語"
+    },
     "Sidebar": {
         "name": "Muhammad Rifal Prasetyo",
         "hire_me": "Hire Me",

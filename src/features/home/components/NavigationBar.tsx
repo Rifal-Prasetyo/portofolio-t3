@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useTranslations } from 'next-intl';
 import { Link } from "@/i18n/navigation";
+import LanguageMenu from '@/components/ui/LanguageSelector';
 
 const navigationButton = [
     {
@@ -100,9 +101,9 @@ const sections = navigationButton.map((item) => item.key);
                             }
                         </ul>
                     </div>
-                    <div className="w-full hidden md:block">
+                    <footer className="w-full hidden md:block">
                         <h3 className="text-sm text-center md:text-lg">Rifal | {new Date().getFullYear()}</h3>
-                    </div>
+                    </footer>
             </div> 
             <div className={clsx("w-full mt-5 border-b border-gray-200 overflow-hidden transition-all duration-1000 ease-in-out", !isOpenSidebar && ' hidden opacity-0', isOpenSidebar && 'block opacity-100')}>
                         <ul>
@@ -115,6 +116,9 @@ const sections = navigationButton.map((item) => item.key);
                                 ))
                             }
                         </ul>
+                        <div className='my-2'>
+                            <LanguageMenu/>
+                        </div>
             </div>
         </nav>
     )

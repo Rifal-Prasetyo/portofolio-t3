@@ -17,7 +17,7 @@ export default function SpotifyPlaying() {
     enabled: true,
   })
 
-  // const duration = data?.currently_playing_type === 'ad' ? 999999999 : data?.duration;
+  const duration = typeof data?.duration === 'undefined' ? 999999999 : data.duration ;
 
   useEffect(() => {
     if (data?.isPlaying) {
@@ -31,7 +31,7 @@ export default function SpotifyPlaying() {
     const interval = setInterval(() => {
       setProgress((prev) => {
         const next = prev + 1000;
-        return next > data.duration ? data.duration : next;
+        return next > duration ? duration : next;
       });
     }, 1000);
 
@@ -42,7 +42,7 @@ export default function SpotifyPlaying() {
   useEffect(() => {
     if (!data?.isPlaying) return;
 
-    const timeLeft = data.duration - data.progress;
+    const timeLeft = duration - data.progress;
     const timeout = setTimeout(() => {
       void refetch();
     }, timeLeft);
@@ -66,7 +66,7 @@ export default function SpotifyPlaying() {
     );
   }
 
-   const progressPercent = (progress / data.duration) * 100;
+   const progressPercent = (progress / duration) * 100;
 
   return (
      <div className="flex items-center gap-4 bg-[#121212] text-white rounded-xl p-4 w-full max-w-md shadow-lg">

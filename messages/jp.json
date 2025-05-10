@@ -1,0 +1,75 @@
+{
+  "greeting": "ようこそ、私たちのすごいアプリへ！",
+  "Lang": {
+        "title": "言語",
+        "indonesia": "インドネシア語",
+        "english": "英語",
+        "japan": "日本語"
+  },
+  "Sidebar": {
+    "name": "ムハンマド・リファル・プラセティヨ",
+    "hire_me": "ぜひ雇ってください！",
+    "navbar": {
+      "home": "ホーム",
+      "about": "自己紹介",
+      "project": "プロジェクト",
+      "article": "記事",
+      "contact": "お問い合わせ"
+    }
+  },
+  "Home": {
+    "name": "こんにちは、{name}です！",
+    "job": {
+      "fullstack": "フルスタックデベロッパー"
+    },
+    "description": "ウェブとモバイルの素敵なアプリを作る経験豊富なソフトウェア開発者です。JavaScript、React、Node.jsなど、色々なプログラミング言語や技術に自信があります！この分野で常に学び、成長していくのが楽しみなんです。",
+    "download_cv": "履歴書をダウンロード"
+  },
+  "About": {
+    "title": "自己紹介",
+    "subtitle": "もっと私のこと知りたくない？ぜひぜひ！",
+    "skills": {
+      "title": "スキル"
+    },
+    "experience": {
+      "title": "職務経歴",
+      "job1": {
+        "title": "バックエンドデベロッパー",
+        "description": "TEFA STUDIOでバックエンドデベロッパーとして、Node.jsとExpressを使ってバックエンドアプリケーションの開発と保守を担当していました。API開発やPostgreSQLデータベースとの連携も担当しました。",
+        "location": "TEFA STUDIO",
+        "target_date": "2024年7月 - 2024年12月"
+      },
+      "job2": {
+        "title": "フルスタックデベロッパー",
+        "description": "TEFA STUDIOでフルスタックデベロッパーとして、SMKN 1 Bangsriのウェブサイト開発に携わりました。すごく面白かったです！",
+        "location": "TEFA STUDIO",
+        "target_date": "2024年11月 - 2024年12月"
+      }
+    },
+    "medsos": {
+      "title": "ソーシャルメディアアカウント"
+    },
+    "spotify": {
+      "title": "最近聴いている曲"
+    },
+    "education": {
+      "title": "学歴"
+    }
+  },
+  "Project": {
+    "title": "プロジェクト",
+    "subtitle": "私が作った最高のプロジェクトをいくつかご紹介します！",
+    "link_preview": "見る",
+    "link_github": "Github"
+  },
+  "Article": {
+    "title": "記事",
+    "subtitle": "たまに文章を書くのが好きで、大抵ここに書いています！",
+    "link": "詳細を読む"
+  },
+  "Contact": {
+    "title": "お問い合わせ",
+    "subtitle": "いつでもご連絡ください！もっと仲良くなりましょう！",
+    "contact_mail": "メールで連絡"
+  }
+}

@@ -3,6 +3,7 @@ import ThemeSelector from '@/components/ui/ThemeSelector';
 import { useTranslations } from 'next-intl';
 import { Link } from "@/i18n/navigation";
 import LinkNext from 'next/link'
+import LanguageMenu from '@/components/ui/LanguageSelector';
 const HomeSection = () => {
     const t = useTranslations();
     return (
@@ -12,7 +13,8 @@ const HomeSection = () => {
                         {t('Home.name', { name: 'Rifal' })}
                     </h1>
                     <div>
-                        <div className='hidden md:block'>
+                        <div className='hidden md:flex gap-2'>
+                            <LanguageMenu/>
                             <ThemeSelector/>
                         </div>
                     </div>
